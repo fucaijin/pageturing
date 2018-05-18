@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorButtonNormal">#55A0CE</color>
+    <color name="colorButtonPressed">#3E7495</color>
+
+    <color name="colorEditTextHint">#999999</color>
+
+    <color name="colorTextView">#333333</color>
+
+    <!--输入框字体的颜色-->
+    <color name="colorEditText">#2B2B2B</color>
+
+    <!--输入框字体的颜色-->
+    <color name="colorResetSettingPressed">#999999</color>
+    <color name="colorResetSettingNormal">#CCCCCC</color>
+
+</resources>

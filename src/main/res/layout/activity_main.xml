@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD"
+    android:id="@+id/fl_main_activity_root"
+    tools:context="com.fucaijin.pageturning.activity.MainActivity">
+
+    <!--播放笑话的ViewPager-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--设置界面-->
+    <LinearLayout
+        android:id="@+id/ll_setting_page_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--正文输入框-->
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="top|start"
+            android:hint="@string/please_input_content"
+            android:padding="10dp"
+            android:textColor="@color/colorEditText"
+            android:textColorHint="@color/colorEditTextHint"
+            android:textSize="@dimen/setting_text_size" />
+
+        <!--输入时间-->
+        <LinearLayout
+            style="@style/SettingItemRootStyle">
+
+            <TextView
+                style="@style/SettingTextStyle"
+                android:text="@string/time" />
+
+            <EditText
+                android:id="@+id/et_setting_time"
+                style="@style/SettingEditTextStyle"
+                android:hint="@string/please_input_altogether_time" />
+
+            <ImageView
+                android:id="@+id/iv_more_setting_button"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:padding="7dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/inverted_triangle_normal"
+                android:clickable="true" />
+
+        </LinearLayout>
+
+        <!--更多设置-->
+        <LinearLayout
+            android:id="@+id/ll_more_setting_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--播放模式-->
+            <LinearLayout
+                style="@style/SettingItemRootStyle">
+
+                <TextView
+                    style="@style/SettingTextStyle"
+                    android:text="@string/play_mode" />
+
+                <RadioGroup
+                    android:id="@+id/rg_play_mode"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/rb_mode_auto"
+                        android:text="@string/play_mode_auto"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorTextView"
+                        android:textSize="@dimen/setting_text_size"
+                        android:layout_height="wrap_content" />
+
+                    <RadioButton
+                        android:id="@+id/rb_mode_manual"
+                        android:text="@string/play_mode_manual"
+                        android:textColor="@color/colorTextView"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/setting_text_size"
+                        android:layout_height="wrap_content" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--字体大小-->
+            <LinearLayout
+                style="@style/SettingItemRootStyle">
+
+                <TextView
+                    style="@style/SettingTextStyle"
+                    android:text="@string/text_size" />
+
+                <EditText
+                    android:id="@+id/et_setting_text_size"
+                    style="@style/SettingEditTextStyle"
+                    android:hint="@string/please_input_text_size"/>
+
+                <Button
+                    android:id="@+id/bt_sure_page_text_size"
+                    style="@style/SettingButtonStyle"
+                    android:text="@string/sure"
+                    android:layout_height="match_parent"
+                    android:layout_width="50dp"/>
+
+            </LinearLayout>
+
+            <!--字体颜色-->
+            <LinearLayout
+                style="@style/SettingItemRootStyle">
+
+                <ImageView
+                    android:id="@+id/iv_page_text_color"
+                    style="@style/SettingSelectColorStyle"/>
+
+                <TextView
+                    style="@style/SettingTextStyle"
+                    android:text="@string/text_color" />
+
+                <EditText
+                    android:id="@+id/et_setting_text_color"
+                    style="@style/SettingEditTextStyle"
+                    android:hint="@string/input_six_number_rgb_color"
+                    android:maxLength="6"
+                    android:digits="0123456789abcdefABCDEF"/>
+
+                <Button
+                    android:id="@+id/bt_sure_page_text_color"
+                    style="@style/SettingButtonStyle"
+                    android:text="@string/sure"
+                    android:layout_height="match_parent"
+                    android:layout_width="50dp"/>
+
+            </LinearLayout>
+
+            <!--背景颜色-->
+            <LinearLayout
+                style="@style/SettingItemRootStyle">
+
+                <ImageView
+                    android:id="@+id/iv_page_background_color"
+                    style="@style/SettingSelectColorStyle"/>
+
+                <TextView
+                    style="@style/SettingTextStyle"
+                    android:text="@string/page_background_color" />
+
+                <EditText
+                    android:id="@+id/et_setting_pager_background_color"
+                    style="@style/SettingEditTextStyle"
+                    android:hint="@string/input_six_number_rgb_color"
+                    android:maxLength="6"
+                    android:digits="0123456789abcdefABCDEF"/>
+
+                <Button
+                    android:id="@+id/bt_sure_page_background_color"
+                    style="@style/SettingButtonStyle"
+                    android:text="@string/sure"
+                    android:layout_height="match_parent"
+                    android:layout_width="50dp"/>
+
+            </LinearLayout>
+
+            <!--播放完毕操作、恢复默认按钮-->
+            <LinearLayout
+                style="@style/SettingItemRootStyle"
+                android:layout_marginStart="-5dp">
+
+                <!--选择是否播放完毕就关闭APP-->
+                <CheckBox
+                    android:id="@+id/cb_play_over_finish_app"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/play_over_finish_app"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorTextView"/>
+
+                <!--恢复默认设置按钮-->
+                <Button
+                    android:id="@+id/bt_reset_default_setting"
+                    android:text="@string/reset_default_setting"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    style="@style/SettingButtonStyle"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--播放按钮-->
+        <Button
+            android:id="@+id/bt_star_play"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_selector"
+            android:text="@string/star_play_content"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/setting_text_size" />
+
+    </LinearLayout>
+
+</FrameLayout>

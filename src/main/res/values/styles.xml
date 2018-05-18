@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--设置项目的文本，包含宽高，字体大小和颜色-->
+    <style name="SettingTextStyle">
+        <item name="android:layout_width">@dimen/setting_text_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/setting_text_size</item>
+        <item name="android:textColor">@color/colorTextView</item>
+    </style>
+
+    <!--设置输入框的样式-->
+    <style name="SettingEditTextStyle">
+        <item name="android:textSize">@dimen/setting_text_size</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/colorEditTextHint</item>
+        <item name="android:textColor">@color/colorEditText</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <!--设置条目的根布局的样式-->
+    <style name="SettingItemRootStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/setting_item_root_width</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginStart">4dp</item>
+    </style>
+
+    <!--设置条目的根布局的样式-->
+    <style name="SettingSelectColorStyle">
+        <item name="android:layout_width">15dp</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:src">#999999</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <!--设置条目中的按钮的样式-->
+    <style name="SettingButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorTextView</item>
+        <item name="android:background">@drawable/reset_setting_button_selector</item>
+        <item name="android:layout_margin">1dp</item>
+    </style>
+
+</resources>
