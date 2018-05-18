@@ -17,7 +17,7 @@
     </style>
 
     <!--设置输入框的样式-->
-    <style name="SettingEditTextStyle">
+    <style name="SettingEditTextStyle" >
         <item name="android:textSize">@dimen/setting_text_size</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>

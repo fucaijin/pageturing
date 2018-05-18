@@ -21,8 +21,7 @@ import com.fucaijin.pageturning.utils.ConvertUtils;
  */
 
 public class PageFragment extends Fragment {
-
-    private final String contentText;
+    private String contentText;
     private Context mContext;
     int textSizeInt;
     String inputTextColor, inputBackGroundColor;
@@ -44,7 +43,6 @@ public class PageFragment extends Fragment {
         textView.setText(contentText);
         textView.setTextSize(ConvertUtils.sp2px(mContext,textSizeInt));
         textView.setTextColor(Color.parseColor("#FF" + inputTextColor));
-
         return rootLayout;
     }
 
