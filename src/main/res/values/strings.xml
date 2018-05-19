@@ -15,4 +15,11 @@
     <string name="play_mode">播放模式 : </string>
     <string name="play_mode_auto">自动</string>
     <string name="play_mode_manual">手动</string>
+    <string name="page_preview_text">文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本</string>
+    <string name="default_play_time">15</string>
+    <string name="default_play_text_size">10</string>
+    <string name="default_play_text_color">333333</string>
+    <string name="default_play_back_ground_color">DDDDDD</string>
+    <string name="default_play_text_color_complete">#FF333333</string>
+    <string name="default_play_back_ground_color_complete">#FFDDDDDD</string>
 </resources>

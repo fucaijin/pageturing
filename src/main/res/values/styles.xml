@@ -54,4 +54,25 @@
         <item name="android:layout_margin">1dp</item>
     </style>
 
+    <!--滑动页面的正常Padding值的样式，全屏贴边无边距-->
+    <style name="PageNoPaddingStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--滑动页面的正常Padding值的样式，上下左右的边距为15dp-->
+    <style name="PageNormalPaddingStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <!--滑动页面的抖音样式，只有右边距56dp-->
+    <style name="PageDouyinStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingEnd">56dp</item>
+        <item name="android:paddingRight">56dp</item>
+    </style>
+
 </resources>

@@ -26,7 +26,7 @@ import com.fucaijin.pageturning.utils.ConvertUtils;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
-
+//    TODO 有空添加ViewPager切换效果的选项，选择不同的页面切换效果，例如：淡入淡出等
     private ImageView ivMoreSettingButton;
     private LinearLayout llMoreSettingRoot;
     private boolean isMoreSettingOpened = false;
@@ -145,8 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void recoveryData() {
         etContent.setText(lastInputContent);
-        etSettingTime.setText(lastInputTime + "");
-        etSettingTextSize.setText(lastInputTextSize + "");
+        etSettingTime.setText(String.valueOf(lastInputTime));
+        etSettingTextSize.setText(String.valueOf(lastInputTextSize));
         etSettingTextColor.setText(lastInputTextColor);
         etSettingPagerBackGroundColor.setText(lastInputBackgroundColor);
         cbPlayOverFinishApp.setChecked(isPlayOverFinishApp);
@@ -199,13 +199,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void resetSetting() {
         etContent.setText("");
-        etSettingTime.setText("15");
-        etSettingTextSize.setText("10");
-        etSettingTextColor.setText("333333");
-        etSettingPagerBackGroundColor.setText("DDDDDD");
+        etSettingTime.setText(R.string.default_play_time);
+        etSettingTextSize.setText(R.string.default_play_text_size);
+        etSettingTextColor.setText(R.string.default_play_text_color);
+        etSettingPagerBackGroundColor.setText(R.string.default_play_back_ground_color);
         cbPlayOverFinishApp.setChecked(false);
-        viPageTextColor.setColorFilter(Color.parseColor("#FF333333"));
-        viPageBackGroundColor.setColorFilter(Color.parseColor("#FFDDDDDD"));
+        viPageTextColor.setColorFilter(Color.parseColor(getString(R.string.default_play_text_color_complete)));
+        viPageBackGroundColor.setColorFilter(Color.parseColor(getString(R.string.default_play_back_ground_color_complete)));
         rbModeAuto.setChecked(true);
         rbModeManual.setChecked(false);
         recoveryUI();
@@ -258,12 +258,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String[] split = mContentStr.split("\\n");//正文数据都在这里，通过分割换行，获取一个数组
                 final int pageSize = split.length;//有多少个换行就是多少行
                 final ArrayList contentLengthArr = new ArrayList();//用来记录每一行字的字数
-                ArrayList FragmentList = new ArrayList<>();
+                ArrayList<PageFragment> FragmentList = new ArrayList<>();
                 final float contentAllLength = mContentStr.length() + 0.0f;
-                for (int i = 0 ;i < pageSize ;i++){
-                    PageFragment pageFragment = new PageFragment(this,split[i], textSizeInt, mInputTextColorStr, mInputBackGroundColorStr);
+                for (String aSplit : split) {
+                    PageFragment pageFragment = new PageFragment(this, aSplit, textSizeInt, mInputTextColorStr, mInputBackGroundColorStr);
                     FragmentList.add(pageFragment);
-                    contentLengthArr.add(split[i].length());
+                    contentLengthArr.add(aSplit.length());
                 }
 //                ☆ 注意 ：FragmentPagerAdapter必须要继承FragmentStatePagerAdapter才可实现实时修改删除Fragment
                 PagerFragmentAdapter mPagerFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), FragmentList);
