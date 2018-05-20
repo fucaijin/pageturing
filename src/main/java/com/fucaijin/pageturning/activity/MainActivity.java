@@ -255,15 +255,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 final ViewPager viewPager = mViewPager;
                 viewPager.setVisibility(View.VISIBLE);
 
-                String[] split = mContentStr.split("\\n");//正文数据都在这里，通过分割换行，获取一个数组
+                String[] split = mContentStr.split("\n");//正文数据都在这里，通过分割换行，获取一个数组
                 final int pageSize = split.length;//有多少个换行就是多少行
                 final ArrayList contentLengthArr = new ArrayList();//用来记录每一行字的字数
                 ArrayList<PageFragment> FragmentList = new ArrayList<>();
                 final float contentAllLength = mContentStr.length() + 0.0f;
-                for (String aSplit : split) {
-                    PageFragment pageFragment = new PageFragment(this, aSplit, textSizeInt, mInputTextColorStr, mInputBackGroundColorStr);
+                for (String text : split) {
+                    PageFragment pageFragment = PageFragment.newInstance(text, textSizeInt, mInputTextColorStr, mInputBackGroundColorStr);
                     FragmentList.add(pageFragment);
-                    contentLengthArr.add(aSplit.length());
+                    contentLengthArr.add(text.length());
                 }
 //                ☆ 注意 ：FragmentPagerAdapter必须要继承FragmentStatePagerAdapter才可实现实时修改删除Fragment
                 PagerFragmentAdapter mPagerFragmentAdapter = new PagerFragmentAdapter(getSupportFragmentManager(), FragmentList);
