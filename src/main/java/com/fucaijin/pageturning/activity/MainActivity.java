@@ -261,6 +261,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ArrayList<PageFragment> FragmentList = new ArrayList<>();
                 final float contentAllLength = mContentStr.length() + 0.0f;
                 for (String text : split) {
+//                    创建Fragment，通过Activity向Fragment传递参数的正确示范：
                     PageFragment pageFragment = PageFragment.newInstance(text, textSizeInt, mInputTextColorStr, mInputBackGroundColorStr);
                     FragmentList.add(pageFragment);
                     contentLengthArr.add(text.length());
